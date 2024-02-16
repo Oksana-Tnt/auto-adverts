@@ -1,4 +1,4 @@
-import { bindActionCreators, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 import { initialState } from "./initialState";
 import { fetchAdverts } from "./advertsOperations";
@@ -12,11 +12,7 @@ const defaultStatus = {
 export const advertsSlice = createSlice({
   name: "adverts",
   initialState,
-  reducers: {
-    setAdverts: (state, action) => {
-      state.adverts = action.payload;
-    },
-  },
+  reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchAdverts.fulfilled, (state, action) => {

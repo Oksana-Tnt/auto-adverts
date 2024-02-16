@@ -1,12 +1,8 @@
-import { useDispatch, useSelector } from "react-redux";
-import { fetchAdverts } from "../../redux/advertsOperations";
+import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getAdverts } from "../../redux/selectors";
 import { Container, SimpleGrid } from "@chakra-ui/react";
-import {
-  CardAdvert,
-  CardButton,
-} from "../../components/AdvertCard/AdvertCard.styled";
+import { CardAdvert } from "../../components/AdvertCard/AdvertCard.styled";
 import Loader from "../Loader/Loader";
 import AdvertCard from "../AdvertCard/AdvertCard";
 import ErrorCard from "../ErrorCard/ErrorCard";
