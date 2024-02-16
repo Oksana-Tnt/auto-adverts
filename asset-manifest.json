@@ -1,16 +1,24 @@
 {
   "files": {
-    "main.css": "/auto-adverts/static/css/main.f855e6bc.css",
-    "main.js": "/auto-adverts/static/js/main.bf33f72d.js",
-    "static/js/592.a79b35b0.chunk.js": "/auto-adverts/static/js/592.a79b35b0.chunk.js",
-    "static/media/logo.svg": "/auto-adverts/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
-    "index.html": "/auto-adverts/index.html",
-    "main.f855e6bc.css.map": "/auto-adverts/static/css/main.f855e6bc.css.map",
-    "main.bf33f72d.js.map": "/auto-adverts/static/js/main.bf33f72d.js.map",
-    "592.a79b35b0.chunk.js.map": "/auto-adverts/static/js/592.a79b35b0.chunk.js.map"
+    "main.css": "/static/css/main.103a6b7b.css",
+    "main.js": "/static/js/main.3df7002d.js",
+    "static/js/20.6373771b.chunk.js": "/static/js/20.6373771b.chunk.js",
+    "static/js/76.295dc340.chunk.js": "/static/js/76.295dc340.chunk.js",
+    "static/js/616.0681a2b8.chunk.js": "/static/js/616.0681a2b8.chunk.js",
+    "static/media/saddest-cat-luhu-maggie-liu-lanlan731-38-59c0bfed09657__700.jpg": "/static/media/saddest-cat-luhu-maggie-liu-lanlan731-38-59c0bfed09657__700.6315ca9129ebbaad9c96.jpg",
+    "static/media/Manrope-Medium.ttf": "/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
+    "static/media/Manrope-Regular.ttf": "/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
+    "static/media/Manrope-Bold.ttf": "/static/media/Manrope-Bold.47f6d7143da9d8c0e480.ttf",
+    "static/media/sprite.svg": "/static/media/sprite.b5f266c71a103a4979124ecdb7948ceb.svg",
+    "index.html": "/index.html",
+    "main.103a6b7b.css.map": "/static/css/main.103a6b7b.css.map",
+    "main.3df7002d.js.map": "/static/js/main.3df7002d.js.map",
+    "20.6373771b.chunk.js.map": "/static/js/20.6373771b.chunk.js.map",
+    "76.295dc340.chunk.js.map": "/static/js/76.295dc340.chunk.js.map",
+    "616.0681a2b8.chunk.js.map": "/static/js/616.0681a2b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.bf33f72d.js"
+    "static/css/main.103a6b7b.css",
+    "static/js/main.3df7002d.js"
   ]
 }
