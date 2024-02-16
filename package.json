@@ -1,7 +1,7 @@
 {
   "name": "auto-adverts",
   "version": "0.1.0",
-  "homepage": "https://Oksana-Tnt.github.io/auto-adverts",
+  "homepage": "https://Oksana-Tnt.github.io/auto-adverts/",
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.11.3",
