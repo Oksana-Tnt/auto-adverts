@@ -1,30 +1,28 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { bindActionCreators, createSlice } from "@reduxjs/toolkit";
 
-import { initialState } from './initialState';
-import {
-  fetchAdverts
- 
-} from './advertsOperations';
+import { initialState } from "./initialState";
+import { fetchAdverts } from "./advertsOperations";
 
 const defaultStatus = {
-  pending: 'pending',
-  fulfilled: 'fulfilled',
-  rejected: 'rejected',
+  pending: "pending",
+  fulfilled: "fulfilled",
+  rejected: "rejected",
 };
 
-
 export const advertsSlice = createSlice({
-  name: 'adverts',
+  name: "adverts",
   initialState,
   reducers: {
-   
+    setAdverts: (state, action) => {
+      state.adverts = action.payload;
+    },
   },
-  extraReducers: builder => {
+  extraReducers: (builder) => {
     builder
-      .addCase(fetchAdverts.fulfilled, (state, { payload }) => {
-        state.status = defaultStatus.fulfilled;   
-        state.adverts=payload;        
-        state.error = '';
+      .addCase(fetchAdverts.fulfilled, (state, action) => {
+        state.adverts = action.payload;
+        state.status = defaultStatus.fulfilled;
+        state.error = null;
       })
       .addCase(fetchAdverts.pending, (state, { payload }) => {
         state.status = defaultStatus.pending;
@@ -32,9 +30,9 @@ export const advertsSlice = createSlice({
       .addCase(fetchAdverts.rejected, (state, { payload }) => {
         state.status = defaultStatus.rejected;
         state.error = payload;
-      })
+      });
   },
 });
 
-export const advertReducer =advertsSlice.reducer;
-
+export const { setAdverts } = advertsSlice.actions;
+export const advertReducer = advertsSlice.reducer;

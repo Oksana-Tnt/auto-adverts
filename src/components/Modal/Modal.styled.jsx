@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const Overlay = styled.div`
   background: rgb(0, 0, 0, 0.5);
@@ -13,14 +13,13 @@ export const Overlay = styled.div`
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);    
-    overflow: hidden;    
-    overflow: auto; 
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    overflow: auto;
     padding: 40px;
     border-radius: 24px;
     background-color: #fff;
     width: 541px;
-   
   }
   .header {
     display: flex;
@@ -46,7 +45,7 @@ export const Overlay = styled.div`
       .modal-icon {
         width: 24px;
         height: 24px;
-        stroke-width: 1.80px;
+        stroke-width: 1.8px;
         stroke: #121417;
       }
     }

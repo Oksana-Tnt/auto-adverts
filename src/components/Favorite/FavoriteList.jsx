@@ -6,6 +6,7 @@ import FavoriteItem from "./FavoriteItem";
 import { CardAdvert } from "../AdvertCard/AdvertCard.styled";
 
 
+
 const FavoriteList= () => {
   const storedFavorite = localStorage.getItem("favorite");
   const initialFavorite = storedFavorite
@@ -22,7 +23,7 @@ const FavoriteList= () => {
         <FavoriteItem
           key={favoriteAdvert.id}
           favoriteAdvert={favoriteAdvert}
-          removeFavoriteById={removeFavoriteById}
+          removeFavoriteById={removeFavoriteById}          
         />
         </CardAdvert>
       ))}

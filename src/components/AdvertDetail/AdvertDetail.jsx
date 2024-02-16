@@ -1,50 +1,66 @@
-import { Card, CardBody, CardFooter, CardHeader,  Image } from '@chakra-ui/react';
-import React from 'react';
-import { CardHeading,  CardText, PriceSpan, Span, WrapperHeading } from "../AdvertCard/AdvertCard.styled"
-import { CardDetails, ImageDetails } from './AdvertDetail.styled';
+import {
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Heading,
+  ListItem,
+} from "@chakra-ui/react";
+import React from "react";
+import { CardText, Span } from "../AdvertCard/AdvertCard.styled";
+import {
+  AccessoriesList,
+  CardDescription,
+  CardDetails,
+  Conditions,
+  DescriptionsHeading,
+  ImageDetails,
+} from "./AdvertDetail.styled";
 
-const AdvertDetails = ({ 
+const AdvertDetails = ({ advert }) => {
+  const {
     id,
-    year, 
-    make, 
-    model, 
-    img, 
-    rentalPrice,
+    year,
+    make,
+    model,
+    fuelConsumption,
     address,
-    rentalCompany, 
-    type, mileage, 
+    engineSize,
+    type,
+    description,
     functionalities,
-     }) => {
-      
-
+  } = advert;
+  const { img } = advert;
   return (
-
     <>
-    <CardDetails>
-    <CardHeader>
-    <ImageDetails    
-    src={img}
-    alt={model}/>         
-    </CardHeader>
-    <CardBody marginBottom={"28px"}>
-        <CardHeading>   
-            <WrapperHeading>    
-            {make}  
-            <Span> {model}, </Span> 
+      <CardDetails key={id}>
+        <CardHeader>
+          <ImageDetails src={img} alt={model} />
+        </CardHeader>
+        <CardBody marginBottom={"28px"}>
+          <Heading>
+            {make}
+            <Span> {model}, </Span>
             {year}
-            </WrapperHeading>     
-            <PriceSpan>{rentalPrice}</PriceSpan>
-        </CardHeading>  
-        <CardText>
-            {address}| {rentalCompany}|{type}|{model}|{mileage}|{functionalities}   
-        </CardText>  
-    </CardBody>
-        <CardFooter>
-        </CardFooter>      
-        </CardDetails>                    
-    
-        </>
-  
+          </Heading>
+          <CardText>
+            {address}|id:{id}|year:{year}|type:{type}|FuelConsumption
+            {fuelConsumption}|engineSize:{engineSize}
+          </CardText>
+          <CardDescription>{description}</CardDescription>
+          <DescriptionsHeading>
+            Accessories and functionalities:
+          </DescriptionsHeading>
+          <AccessoriesList>
+            {functionalities?.map((item) => (
+              <ListItem>{item} | </ListItem>
+            ))}
+          </AccessoriesList>
+          <DescriptionsHeading>Rental Conditions:</DescriptionsHeading>
+          <Conditions>fgdgfd</Conditions>
+        </CardBody>
+        <CardFooter></CardFooter>
+      </CardDetails>
+    </>
   );
 };
 
