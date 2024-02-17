@@ -1,4 +1,3 @@
-import { Heading } from "@chakra-ui/react";
 import { HomePageWrapper } from "../components/Header/Header.styled";
 
 const HomePage = () => {

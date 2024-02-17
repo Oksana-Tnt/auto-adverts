@@ -1,10 +1,4 @@
-import {
-  CardBody,
-  CardFooter,
-  CardHeader,
-  Heading,
-  ListItem,
-} from "@chakra-ui/react";
+import { CardBody, CardHeader, Heading, ListItem } from "@chakra-ui/react";
 import React from "react";
 import { CardText, Span } from "../AdvertCard/AdvertCard.styled";
 import {
