@@ -45,5 +45,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+.section{
+  padding-top: 20px;
+}
 `;

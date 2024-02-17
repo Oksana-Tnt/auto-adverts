@@ -12,7 +12,11 @@ const defaultStatus = {
 export const advertsSlice = createSlice({
   name: "adverts",
   initialState,
-  reducers: {},
+  reducers: {
+    filterAdverts(state, action) {
+      state.filter = action.payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAdverts.fulfilled, (state, action) => {
@@ -30,5 +34,5 @@ export const advertsSlice = createSlice({
   },
 });
 
-export const { setAdverts } = advertsSlice.actions;
+export const { filterAdverts } = advertsSlice.actions;
 export const advertReducer = advertsSlice.reducer;

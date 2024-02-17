@@ -1,11 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAdverts } from "../../redux/selectors";
+import { getAdverts, getFilter } from "../../redux/selectors";
 import { Container, SimpleGrid } from "@chakra-ui/react";
-import { CardAdvert } from "../../components/AdvertCard/AdvertCard.styled";
+import {
+  CardAdvert,
+  CardButton,
+} from "../../components/AdvertCard/AdvertCard.styled";
 import Loader from "../Loader/Loader";
 import AdvertCard from "../AdvertCard/AdvertCard";
 import ErrorCard from "../ErrorCard/ErrorCard";
+import { fetchAdverts } from "../../redux/advertsOperations";
 const STATUS = {
   IDLE: "idle",
   PENDING: "pending",
@@ -15,6 +19,22 @@ const STATUS = {
 
 const AdvertList = () => {
   const { adverts, status } = useSelector(getAdverts);
+  const filterName = useSelector(getFilter);
+
+  const filteredAdverts = adverts.filter((advert) =>
+    advert.make.includes(filterName)
+  );
+
+  const [page, setPage] = useState(1);
+  const dispatch = useDispatch();
+
+  const loadMoreAdverts = () => {
+    setPage((prev) => prev + 1);
+  };
+
+  useEffect(() => {
+    dispatch(fetchAdverts(page));
+  }, [dispatch, page]);
 
   const [newAdverts, setNewAdverts] = useState([]);
 
@@ -50,6 +70,10 @@ const AdvertList = () => {
     );
   };
 
+  console.log(filterName);
+  console.log(filteredAdverts);
+  console.log(newAdverts);
+
   if (status === STATUS.PENDING) return <Loader />;
   else if (status === STATUS.FULFILLED) {
     return (
@@ -61,7 +85,7 @@ const AdvertList = () => {
             columnGap={"30px"}
             rowGap={"50px"}
           >
-            {newAdverts?.map((advert) => (
+            {filteredAdverts?.map((advert) => (
               <CardAdvert key={advert.id}>
                 <AdvertCard
                   advert={advert}
@@ -72,6 +96,7 @@ const AdvertList = () => {
               </CardAdvert>
             ))}
           </SimpleGrid>
+          <CardButton onClick={loadMoreAdverts}>Load more</CardButton>
         </Container>
       </>
     );
