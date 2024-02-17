@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
-import { getAdverts, getFilter } from "../../redux/selectors";
+
 import { Container, SimpleGrid } from "@chakra-ui/react";
 import {
   CardAdvert,
@@ -9,7 +9,9 @@ import {
 import Loader from "../Loader/Loader";
 import AdvertCard from "../AdvertCard/AdvertCard";
 import ErrorCard from "../ErrorCard/ErrorCard";
-import { fetchAdverts } from "../../redux/advertsOperations";
+import { fetchAdverts } from "../../redux/adverts/advertsOperations";
+import { getAdverts } from "../../redux/adverts/selectors";
+
 const STATUS = {
   IDLE: "idle",
   PENDING: "pending",
@@ -18,12 +20,7 @@ const STATUS = {
 };
 
 const AdvertList = () => {
-  const { adverts, status } = useSelector(getAdverts);
-  const filterName = useSelector(getFilter);
-
-  const filteredAdverts = adverts.filter((advert) =>
-    advert.make.includes(filterName)
-  );
+  const { adverts, status, filters } = useSelector(getAdverts);
 
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
@@ -33,14 +30,22 @@ const AdvertList = () => {
   };
 
   useEffect(() => {
-    dispatch(fetchAdverts(page));
-  }, [dispatch, page]);
+    const params = {
+      page: page,
+      limit: 12,
+      make: filters[0],
+      rentalPrice: filters[1],
+    };
+    dispatch(fetchAdverts(params));
+  }, [dispatch, page, filters]);
 
   const [newAdverts, setNewAdverts] = useState([]);
 
   useEffect(() => {
     setNewAdverts((prev) => [...prev, ...adverts]);
   }, [adverts]);
+
+  const renderAvderts = filters.lenght === 0 ? newAdverts : adverts;
 
   const storedFavorite = localStorage.getItem("favorite");
   const initialFavorite = storedFavorite ? JSON.parse(storedFavorite) : [];
@@ -70,10 +75,6 @@ const AdvertList = () => {
     );
   };
 
-  console.log(filterName);
-  console.log(filteredAdverts);
-  console.log(newAdverts);
-
   if (status === STATUS.PENDING) return <Loader />;
   else if (status === STATUS.FULFILLED) {
     return (
@@ -85,7 +86,7 @@ const AdvertList = () => {
             columnGap={"30px"}
             rowGap={"50px"}
           >
-            {filteredAdverts?.map((advert) => (
+            {renderAvderts?.map((advert) => (
               <CardAdvert key={advert.id}>
                 <AdvertCard
                   advert={advert}

@@ -3,7 +3,7 @@ import Filter from "../components/Filter/Filter";
 
 const CatalogPage = () => {
   return (
-    <section class="section">
+    <section className="catalog-section">
       <Filter />
       <AdvertList />
     </section>

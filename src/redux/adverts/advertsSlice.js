@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-
 import { initialState } from "./initialState";
 import { fetchAdverts } from "./advertsOperations";
 
@@ -13,15 +12,17 @@ export const advertsSlice = createSlice({
   name: "adverts",
   initialState,
   reducers: {
-    filterAdverts(state, action) {
-      state.filter = action.payload;
+    setFilters: (state, action) => {
+      state.filters = action.payload;
+      state.adverts = [];
+      console.log(state.filters);
     },
   },
   extraReducers: (builder) => {
     builder
       .addCase(fetchAdverts.fulfilled, (state, action) => {
-        state.adverts = action.payload;
         state.status = defaultStatus.fulfilled;
+        state.adverts = action.payload;
         state.error = null;
       })
       .addCase(fetchAdverts.pending, (state, { payload }) => {
@@ -33,6 +34,5 @@ export const advertsSlice = createSlice({
       });
   },
 });
-
-export const { filterAdverts } = advertsSlice.actions;
+export const { setFilters } = advertsSlice.actions;
 export const advertReducer = advertsSlice.reducer;

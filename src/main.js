@@ -4,6 +4,7 @@ import "./index.css";
 import Regular from "../src/assets/fonts/Manrope-Regular.ttf";
 import Medium from "../src/assets/fonts/Manrope-Medium.ttf";
 import Bold from "../src/assets/fonts/Manrope-Bold.ttf";
+import BgImg from "../src/assets/images/Background.jpg";
 
 export const GlobalStyle = createGlobalStyle`
 
@@ -33,7 +34,7 @@ export const GlobalStyle = createGlobalStyle`
   --primary-black: #121417;
   --secondary-black: #363535;
   --active-blue: #0b44cd;
-
+  --secondary-black: #8a8a89;
   // * Secondary colors: 
 
 }
@@ -47,5 +48,14 @@ body {
 }
 .section{
   padding-top: 20px;
+}
+.catalog-section{
+  padding-top: 150px;
+}
+
+.homePage{
+  background-color: white;
+  background-image: url("${BgImg}");
+
 }
 `;

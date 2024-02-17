@@ -9,11 +9,15 @@ import React from "react";
 import { CardText, Span } from "../AdvertCard/AdvertCard.styled";
 import {
   AccessoriesList,
+  ButtonWrapper,
   CardDescription,
   CardDetails,
   Conditions,
   DescriptionsHeading,
   ImageDetails,
+  RentButton,
+  SpanConditions,
+  SpanConditionsAccent,
 } from "./AdvertDetail.styled";
 
 const AdvertDetails = ({ advert }) => {
@@ -28,6 +32,8 @@ const AdvertDetails = ({ advert }) => {
     type,
     description,
     functionalities,
+    mileage,
+    rentalPrice,
   } = advert;
   const { img } = advert;
   return (
@@ -56,9 +62,20 @@ const AdvertDetails = ({ advert }) => {
             ))}
           </AccessoriesList>
           <DescriptionsHeading>Rental Conditions:</DescriptionsHeading>
-          <Conditions>fgdgfd</Conditions>
+          <Conditions>
+            <SpanConditions>Minimum age:</SpanConditions>
+            <SpanConditionsAccent>25</SpanConditionsAccent>
+            <SpanConditions>valid driver license</SpanConditions>
+            <SpanConditions>Security deposite required </SpanConditions>
+            <SpanConditions>mileage</SpanConditions>
+            <SpanConditionsAccent>{mileage}</SpanConditionsAccent>
+            <SpanConditions>Price</SpanConditions>
+            <SpanConditionsAccent>{rentalPrice}</SpanConditionsAccent>
+          </Conditions>
         </CardBody>
-        <CardFooter></CardFooter>
+        <ButtonWrapper>
+          <RentButton>Rental car</RentButton>
+        </ButtonWrapper>
       </CardDetails>
     </>
   );

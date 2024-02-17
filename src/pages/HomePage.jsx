@@ -1,7 +1,10 @@
+import { Heading } from "@chakra-ui/react";
+import { HomePageWrapper } from "../components/Header/Header.styled";
+
 const HomePage = () => {
   return (
-    <section class="section">
-      <h1>HomePage</h1>
+    <section className="section homePage">
+      <HomePageWrapper></HomePageWrapper>
     </section>
   );
 };
