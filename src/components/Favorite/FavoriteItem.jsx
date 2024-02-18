@@ -1,4 +1,4 @@
-import { CardBody, CardFooter, CardHeader, Image } from "@chakra-ui/react";
+import { Image } from "@chakra-ui/react";
 import {
   CardButton,
   CardHeading,
