@@ -15,8 +15,6 @@ import Icon from "../Icon/Icon";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import AdvertDetails from "../AdvertDetail/AdvertDetail";
-import { useSelector } from "react-redux";
-import { getAdverts } from "../../redux/adverts/selectors";
 
 const FavoriteItem = ({ favoriteAdvert, removeFavoriteById }) => {
   const {
