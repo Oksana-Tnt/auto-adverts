@@ -1,16 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 
-import { Container, SimpleGrid } from "@chakra-ui/react";
+import { Card } from "@chakra-ui/react";
 import {
-  CardAdvert,
+  ButtonWrapper,
   CardButton,
+  CatalogWrapper,
 } from "../../components/AdvertCard/AdvertCard.styled";
 import Loader from "../Loader/Loader";
 import AdvertCard from "../AdvertCard/AdvertCard";
 import ErrorCard from "../ErrorCard/ErrorCard";
-import { fetchAdverts } from "../../redux/adverts/advertsOperations";
 import { getAdverts } from "../../redux/adverts/selectors";
+import { fetchAdverts } from "../../redux/adverts/advertsOperations";
 
 const STATUS = {
   IDLE: "idle",
@@ -20,7 +21,7 @@ const STATUS = {
 };
 
 const AdvertList = () => {
-  const { adverts, status, filters } = useSelector(getAdverts);
+  const { adverts, filters, status } = useSelector(getAdverts);
 
   const [page, setPage] = useState(1);
   const dispatch = useDispatch();
@@ -28,6 +29,16 @@ const AdvertList = () => {
   const loadMoreAdverts = () => {
     setPage((prev) => prev + 1);
   };
+
+  useEffect(() => {
+    const params = {
+      page: 1,
+      limit: 12,
+      make: "",
+      rentalPrice: "",
+    };
+    dispatch(fetchAdverts(params));
+  }, [dispatch]);
 
   useEffect(() => {
     const params = {
@@ -47,6 +58,7 @@ const AdvertList = () => {
 
   const renderAvderts = filters.lenght === 0 ? newAdverts : adverts;
 
+  //-----------------Favorite--------------------------------------------
   const storedFavorite = localStorage.getItem("favorite");
   const initialFavorite = storedFavorite ? JSON.parse(storedFavorite) : [];
 
@@ -74,31 +86,26 @@ const AdvertList = () => {
       prevFavorite.filter((item) => item.id !== id)
     );
   };
-
+  //---------------------------------------------------------------------------------------
   if (status === STATUS.PENDING) return <Loader />;
   else if (status === STATUS.FULFILLED) {
     return (
       <>
-        <Container bg="blue.600" centerContent>
-          <SimpleGrid
-            width={"1184px"}
-            templateColumns="repeat(4, minmax(274px, 1fr))"
-            columnGap={"30px"}
-            rowGap={"50px"}
-          >
-            {renderAvderts?.map((advert) => (
-              <CardAdvert key={advert.id}>
-                <AdvertCard
-                  advert={advert}
-                  addFavorite={addFavorite}
-                  removeFavorite={removeFavorite}
-                  isFavorite={isFavorite(advert.id)}
-                />
-              </CardAdvert>
-            ))}
-          </SimpleGrid>
+        <CatalogWrapper>
+          {renderAvderts?.map((advert) => (
+            <Card key={advert.id}>
+              <AdvertCard
+                advert={advert}
+                addFavorite={addFavorite}
+                removeFavorite={removeFavorite}
+                isFavorite={isFavorite(advert.id)}
+              />
+            </Card>
+          ))}
+        </CatalogWrapper>
+        <ButtonWrapper>
           <CardButton onClick={loadMoreAdverts}>Load more</CardButton>
-        </Container>
+        </ButtonWrapper>
       </>
     );
   } else if (status === STATUS.REJECTED) return <ErrorCard />;

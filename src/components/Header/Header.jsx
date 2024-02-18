@@ -4,9 +4,9 @@ import { Link } from "react-router-dom";
 import { CurrentLink, HeaderWrapper } from "./Header.styled";
 import Icon from "../Icon/Icon";
 
-const Header = ({ showModal }) => {
+const Header = () => {
   return (
-    <Container bg="blue.600" centerContent>
+    <Container centerContent>
       <HeaderWrapper>
         <Link to={"/"}>
           <Icon className="icon-logo" id="logo" />

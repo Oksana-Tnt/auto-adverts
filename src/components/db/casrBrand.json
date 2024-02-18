@@ -1,4 +1,5 @@
 [
+    { "value": "", "label": "All" },
   { "value": "Buick", "label": "Buick" },
   { "value": "Volvo", "label": "Volvo" },
   { "value": "HUMMER", "label": "HUMMER" },

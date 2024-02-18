@@ -9,9 +9,12 @@ export const CardDetails = styled(Card)`
   align-items: center;
 `;
 export const ImageDetails = styled(Image)`
-  width: 461px;
   object-fit: cover;
   border-radius: 14px;
+  width: 320px;
+  @media screen and (min-width: 768px) {
+    width: 461px;
+  }
 `;
 export const CardDescription = styled.p`
   font-size: 14px;
@@ -57,6 +60,10 @@ export const RentButton = styled.div`
   font-weight: 600;
   font-size: 14px;
   line-height: 143%;
+
+  &:hover {
+    background-color: var(--active-blue);
+  }
 `;
 export const ButtonWrapper = styled(CardFooter)`
   display: flex;

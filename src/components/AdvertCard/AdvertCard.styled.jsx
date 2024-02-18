@@ -1,14 +1,45 @@
-import { Button, Card, Heading } from "@chakra-ui/react";
+import {
+  Button,
+  CardBody,
+  CardFooter,
+  CardHeader,
+  Heading,
+  SimpleGrid,
+} from "@chakra-ui/react";
 import styled from "styled-components";
 
 export const CardHeading = styled(Heading)`
   display: flex;
   justify-content: space-between;
-  padding-right: 15px;
   font-weight: 500;
   font-size: 16px;
   line-height: 150%;
   color: var(--primary-black);
+`;
+export const WrapperImg = styled(CardHeader)`
+  position: relative;
+  display: flex;
+  justify-content: center;
+`;
+export const WrapperBody = styled(CardBody)`
+  padding-left: 40px;
+  padding-right: 40px;
+  margin-bottom: 48px;
+
+  @media screen and (min-width: 768px) {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  @media screen and (min-width: 1440px) {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+`;
+
+export const FooterWrapper = styled(CardFooter)`
+  display: flex;
+  justify-content: center;
 `;
 export const WrapperHeading = styled.span`
   height: 50px;
@@ -43,21 +74,45 @@ export const CardButton = styled.button`
     background-color: var(--active-blue);
   }
 `;
-export const CardAdvert = styled(Card)`
-  position: relative;
-`;
+
 export const FavoriteButton = styled(Button)`
   position: absolute;
-  top: -450px;
-  left: 220px;
+  top: -470px;
+  left: 260px;
   width: 40px;
   background-color: transparent;
   border: 0px;
   outline: none;
 
+  @media screen and (min-width: 1440px) {
+    top: -470px;
+    left: 230px;
+  }
   .icon-favorite {
     fill: var(--primary-blue);
     width: 18px;
     height: 18px;
   }
+`;
+export const CatalogWrapper = styled(SimpleGrid)`
+  display: grid;
+  grid-template-columns: repeat(1, minmax(274px, 1fr));
+  width: 350px;
+  margin-bottom: 30px;
+  column-gap: 30px;
+  row-gap: 50px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (min-width: 768px) {
+    width: 750px;
+    grid-template-columns: repeat(2, minmax(274px, 1fr));
+  }
+  @media screen and (min-width: 1440px) {
+    width: 1200px;
+    grid-template-columns: repeat(4, minmax(274px, 1fr));
+  }
+`;
+export const ButtonWrapper = styled.div`
+  margin-bottom: 20px;
 `;

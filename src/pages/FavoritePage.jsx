@@ -2,7 +2,7 @@ import FavoriteList from "../components/Favorite/FavoriteList";
 
 const FavoritePage = () => {
   return (
-    <section className="catalog-section">
+    <section className="favorite-section">
       <FavoriteList />
     </section>
   );

@@ -16,10 +16,19 @@ export const Overlay = styled.div`
     transform: translate(-50%, -50%);
     overflow: hidden;
     overflow: auto;
-    padding: 40px;
+    padding: 30px;
     border-radius: 24px;
     background-color: #fff;
-    width: 541px;
+    width: 350px;
+    height: 80%;
+
+    @media screen and (min-width: 768px) {
+      width: 541px;
+      height: 90%;
+    }
+    @media screen and (min-width: 1440px) {
+      height: auto;
+    }
   }
   .header {
     display: flex;

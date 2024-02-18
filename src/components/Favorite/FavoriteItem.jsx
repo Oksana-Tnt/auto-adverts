@@ -4,14 +4,19 @@ import {
   CardHeading,
   CardText,
   FavoriteButton,
+  FooterWrapper,
   PriceSpan,
   Span,
+  WrapperBody,
   WrapperHeading,
+  WrapperImg,
 } from "../AdvertCard/AdvertCard.styled";
 import Icon from "../Icon/Icon";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import AdvertDetails from "../AdvertDetail/AdvertDetail";
+import { useSelector } from "react-redux";
+import { getAdverts } from "../../redux/adverts/selectors";
 
 const FavoriteItem = ({ favoriteAdvert, removeFavoriteById }) => {
   const {
@@ -27,7 +32,9 @@ const FavoriteItem = ({ favoriteAdvert, removeFavoriteById }) => {
     mileage,
     functionalities,
   } = favoriteAdvert;
+
   const firstFunctionalities = functionalities[0];
+
   const [isVisible, setIsVisible] = useState(false);
 
   const toggleModal = () => {
@@ -35,16 +42,17 @@ const FavoriteItem = ({ favoriteAdvert, removeFavoriteById }) => {
   };
   return (
     <>
-      <CardHeader>
+      <WrapperImg>
         <Image
+          alignSelf={"center"}
           boxSize="274px"
           objectFit="cover"
           borderRadius="14px"
           src={img}
           alt={model}
         />
-      </CardHeader>
-      <CardBody marginBottom={"28px"}>
+      </WrapperImg>
+      <WrapperBody>
         <CardHeading>
           <WrapperHeading>
             {make}
@@ -57,10 +65,10 @@ const FavoriteItem = ({ favoriteAdvert, removeFavoriteById }) => {
           {address}| {rentalCompany}|{type}|{model}|{mileage}|{" "}
           {firstFunctionalities}
         </CardText>
-      </CardBody>
-      <CardFooter>
+      </WrapperBody>
+      <FooterWrapper>
         <CardButton onClick={toggleModal}>Learn More</CardButton>
-      </CardFooter>
+      </FooterWrapper>
 
       <FavoriteButton type="button" onClick={() => removeFavoriteById(id)}>
         <Icon className="icon-favorite" id="active" />
@@ -68,19 +76,7 @@ const FavoriteItem = ({ favoriteAdvert, removeFavoriteById }) => {
 
       {isVisible && (
         <Modal setVisible={toggleModal}>
-          <AdvertDetails
-            id={id}
-            year={year}
-            make={make}
-            model={model}
-            img={img}
-            rentalPrice={rentalPrice}
-            address={address}
-            rentalCompany={rentalCompany}
-            typer={type}
-            mileage={mileage}
-            functionalities={functionalities}
-          />
+          <AdvertDetails advert={favoriteAdvert} />
         </Modal>
       )}
     </>

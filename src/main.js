@@ -4,24 +4,27 @@ import "./index.css";
 import Regular from "../src/assets/fonts/Manrope-Regular.ttf";
 import Medium from "../src/assets/fonts/Manrope-Medium.ttf";
 import Bold from "../src/assets/fonts/Manrope-Bold.ttf";
-import BgImg from "../src/assets/images/Background.jpg";
+import BgImgMob from "../src/assets/images/Background-mob.jpg";
+import BgImgTabl from "../src/assets/images/Background-tabl.jpg";
+import BgImgDesk from "../src/assets/images/Background-desk.jpg";
+import BgImgFull from "../src/assets/images/Background-fullscreen.jpg";
 
 export const GlobalStyle = createGlobalStyle`
 
 @font-face{
   
   @font-face {
-    font-family: 'Manrope',sans-serif;
+    font-family: 'Manrope-Regular',sans-serif;
     src: url(${Regular}) format('truetype'),
     }
 
   @font-face {
-    font-family: 'Manrope',sans-serif;
+    font-family: 'Manrope-Medium',sans-serif;
     src: url(${Medium}) format('truetype'),
     }
 
   @font-face {
-    font-family: 'Manrope',sans-serif;
+    font-family: 'Manrope-Bold',sans-serif;
     src: url(${Bold}) format('truetype'),
     }
 }
@@ -40,22 +43,70 @@ export const GlobalStyle = createGlobalStyle`
 }
 
 body {
-  margin: 0;
-   font-family: 'Manrope', sans-serif;
+  
+   font-family: 'Manrope-Regular', sans-serif;
   color:var(--primary-black);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    overflow: hidden;
+
+ 
 }
-.section{
-  padding-top: 20px;
-}
+
+
 .catalog-section{
-  padding-top: 150px;
+  padding-top: 100px;
+  height: 100vh;
+  overflow-y: scroll;
+
+  @media screen and (min-width: 768px){
+    margin-top: -80px;    
+  }
+ }
+
+.favorite-section{
+  padding-top: 80px;
+    height: 100vh;
+    overflow-y: scroll;
+  @media screen and (min-width: 768px){
+    padding-top: 100px;
+  }
+    @media screen and (min-width: 1440px){
+    padding-top: 150px;
+  }
+}
+.container{
+  min-width: 390px;
+
+  @media screen and (min-width:768px){
+    min-width: 768px;
+  }
+
+   @media screen and (min-width:1440px){
+    min-width: 1440px;
+  }
 }
 
-.homePage{
-  background-color: white;
-  background-image: url("${BgImg}");
+.catalog-container{
+  height: 100vh;
+  overflow-y: scroll;
+}
 
+.homePage{ 
+  background-image: url("${BgImgMob}");
+  object-fit: cover;
+  background-repeat: no-repeat; 
+
+
+  @media screen and (min-width: 768px){
+  background-image: url("${BgImgTabl}");
+  }
+
+   @media screen and (min-width: 1440px){
+  background-image: url("${BgImgDesk}");
+  }
+    @media screen and (min-width: 1920px){
+  background-image: url("${BgImgFull}");
+  }
 }
 `;

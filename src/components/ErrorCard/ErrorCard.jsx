@@ -1,14 +1,17 @@
-import React from 'react';
-import img from '../saddest-cat-luhu-maggie-liu-lanlan731-38-59c0bfed09657__700.jpg';
+import React from "react";
+import img from "../../assets/images/car-nonFound.png";
+import { Box, Container, Heading, Img } from "@chakra-ui/react";
 
 const ErrorCard = () => {
   return (
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">OOOps, there is no image</h5>
-        <img src={img} width="300px" alt="Sad cat" />
-      </div>
-    </div>
+    <Container centerContent padding={"50px"}>
+      <Box>
+        <Heading paddingBottom={"50px"}>
+          OOOps, there is no cars for your requests
+        </Heading>
+        <Img src={img} width="600px" alt="No Images" />
+      </Box>
+    </Container>
   );
 };
 

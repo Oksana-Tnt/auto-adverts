@@ -5,9 +5,12 @@ import {
   CardHeading,
   CardText,
   FavoriteButton,
+  FooterWrapper,
   PriceSpan,
   Span,
+  WrapperBody,
   WrapperHeading,
+  WrapperImg,
 } from "./AdvertCard.styled";
 import Icon from "../Icon/Icon";
 import Modal from "../Modal/Modal";
@@ -35,16 +38,17 @@ const AdvertCard = ({ advert, addFavorite, removeFavorite, isFavorite }) => {
   const { img } = advert;
   return (
     <>
-      <CardHeader>
+      <WrapperImg>
         <Image
+          alignSelf={"center"}
           boxSize="274px"
           objectFit="cover"
           borderRadius="14px"
           src={img}
           alt={model}
         />
-      </CardHeader>
-      <CardBody marginBottom={"28px"}>
+      </WrapperImg>
+      <WrapperBody>
         <CardHeading>
           <WrapperHeading>
             {make}
@@ -57,12 +61,12 @@ const AdvertCard = ({ advert, addFavorite, removeFavorite, isFavorite }) => {
           {address}| {rentalCompany}|{type}|{model}|{mileage}|
           {functionalities[0]}
         </CardText>
-      </CardBody>
-      <CardFooter>
+      </WrapperBody>
+      <FooterWrapper>
         <CardButton type="button" onClick={toggleModal}>
           Learn More
         </CardButton>
-      </CardFooter>
+      </FooterWrapper>
 
       {!isFavorite ? (
         <FavoriteButton type="button" onClick={() => addFavorite(id)}>

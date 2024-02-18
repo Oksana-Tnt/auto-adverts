@@ -27,22 +27,27 @@ const Filter = () => {
   filters.push(filterPrice);
 
   const handleMakeInput = ({ value }) => {
+    if (value === "") {
+      dispatch(setFilters([]));
+      filters = [];
+      setFilterMake("");
+    }
     setFilterMake(value);
   };
 
   const handlePriceInput = ({ value }) => {
+    if (value === "") {
+      dispatch(setFilters([]));
+      filters = [];
+      setFilterPrice("");
+    }
     setFilterPrice(value);
   };
-  console.log(filters);
+
   const handleFilter = () => {
     dispatch(setFilters(filters));
   };
-  const handleReset = () => {
-    dispatch(setFilters([]));
-    filters = [];
-    setFilterMake("");
-    setFilterPrice("");
-  };
+
   return (
     <>
       <Container bg="blue.600" centerContent>
@@ -54,7 +59,7 @@ const Filter = () => {
                 styles={{
                   control: (baseStyles, state) => ({
                     ...baseStyles,
-                    height: "48px",
+                    height: "35px",
                     borderRadius: "14px",
                   }),
                 }}
@@ -68,7 +73,7 @@ const Filter = () => {
                 styles={{
                   control: (baseStyles, state) => ({
                     ...baseStyles,
-                    height: "48px",
+                    height: "35px",
                     borderRadius: "14px",
                   }),
                 }}
@@ -79,7 +84,6 @@ const Filter = () => {
           </Wrapper>
           <ButtonWrapper>
             <SelectorButton onClick={handleFilter}>Search</SelectorButton>
-            <SelectorButton onClick={handleReset}>Reset</SelectorButton>
           </ButtonWrapper>
         </SelectorWrapper>
       </Container>
