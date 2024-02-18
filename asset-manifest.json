@@ -1,27 +1,30 @@
 {
   "files": {
     "main.css": "/auto-adverts/static/css/main.103a6b7b.css",
-    "main.js": "/auto-adverts/static/js/main.246f4a19.js",
-    "static/js/796.eb5ceeb1.chunk.js": "/auto-adverts/static/js/796.eb5ceeb1.chunk.js",
-    "static/js/76.28d310ef.chunk.js": "/auto-adverts/static/js/76.28d310ef.chunk.js",
-    "static/js/114.4310fdca.chunk.js": "/auto-adverts/static/js/114.4310fdca.chunk.js",
-    "static/js/708.9d76ad62.chunk.js": "/auto-adverts/static/js/708.9d76ad62.chunk.js",
-    "static/media/saddest-cat-luhu-maggie-liu-lanlan731-38-59c0bfed09657__700.jpg": "/auto-adverts/static/media/saddest-cat-luhu-maggie-liu-lanlan731-38-59c0bfed09657__700.6315ca9129ebbaad9c96.jpg",
+    "main.js": "/auto-adverts/static/js/main.55e80f25.js",
+    "static/js/792.e3165bce.chunk.js": "/auto-adverts/static/js/792.e3165bce.chunk.js",
+    "static/js/76.af4b3c4a.chunk.js": "/auto-adverts/static/js/76.af4b3c4a.chunk.js",
+    "static/js/496.d75a5c3b.chunk.js": "/auto-adverts/static/js/496.d75a5c3b.chunk.js",
+    "static/js/624.bed2bda4.chunk.js": "/auto-adverts/static/js/624.bed2bda4.chunk.js",
+    "static/media/Background-fullscreen.jpg": "/auto-adverts/static/media/Background-fullscreen.00b2251d6162dc225c34.jpg",
+    "static/media/Background-desk.jpg": "/auto-adverts/static/media/Background-desk.73d3077a939a38bae776.jpg",
+    "static/media/Background-tabl.jpg": "/auto-adverts/static/media/Background-tabl.fd58ec396205d1f6e836.jpg",
+    "static/media/Background-mob.jpg": "/auto-adverts/static/media/Background-mob.1b058feefc3c5effe875.jpg",
+    "static/media/car-nonFound.png": "/auto-adverts/static/media/car-nonFound.9e86cc5abef9d0945758.png",
     "static/media/Manrope-Medium.ttf": "/auto-adverts/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
     "static/media/Manrope-Regular.ttf": "/auto-adverts/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
     "static/media/Manrope-Bold.ttf": "/auto-adverts/static/media/Manrope-Bold.47f6d7143da9d8c0e480.ttf",
-    "static/media/Background.jpg": "/auto-adverts/static/media/Background.d5210d475eccdece27c6.jpg",
-    "static/media/sprite.svg": "/auto-adverts/static/media/sprite.a1bc590dcfa0b0d3ccfe916acb6e0e4d.svg",
+    "static/media/sprite.svg": "/auto-adverts/static/media/sprite.2d5622d0f7af26b04708ef3faf8422f2.svg",
     "index.html": "/auto-adverts/index.html",
     "main.103a6b7b.css.map": "/auto-adverts/static/css/main.103a6b7b.css.map",
-    "main.246f4a19.js.map": "/auto-adverts/static/js/main.246f4a19.js.map",
-    "796.eb5ceeb1.chunk.js.map": "/auto-adverts/static/js/796.eb5ceeb1.chunk.js.map",
-    "76.28d310ef.chunk.js.map": "/auto-adverts/static/js/76.28d310ef.chunk.js.map",
-    "114.4310fdca.chunk.js.map": "/auto-adverts/static/js/114.4310fdca.chunk.js.map",
-    "708.9d76ad62.chunk.js.map": "/auto-adverts/static/js/708.9d76ad62.chunk.js.map"
+    "main.55e80f25.js.map": "/auto-adverts/static/js/main.55e80f25.js.map",
+    "792.e3165bce.chunk.js.map": "/auto-adverts/static/js/792.e3165bce.chunk.js.map",
+    "76.af4b3c4a.chunk.js.map": "/auto-adverts/static/js/76.af4b3c4a.chunk.js.map",
+    "496.d75a5c3b.chunk.js.map": "/auto-adverts/static/js/496.d75a5c3b.chunk.js.map",
+    "624.bed2bda4.chunk.js.map": "/auto-adverts/static/js/624.bed2bda4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.103a6b7b.css",
-    "static/js/main.246f4a19.js"
+    "static/js/main.55e80f25.js"
   ]
 }
