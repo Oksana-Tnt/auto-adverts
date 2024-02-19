@@ -6,7 +6,6 @@ import Medium from "../src/assets/fonts/Manrope-Medium.ttf";
 import Bold from "../src/assets/fonts/Manrope-Bold.ttf";
 import BgImgMob from "../src/assets/images/Background-mob.jpg";
 import BgImgTabl from "../src/assets/images/Background-tabl.jpg";
-import BgImgDesk from "../src/assets/images/Background-desk.jpg";
 import BgImgFull from "../src/assets/images/Background-fullscreen.jpg";
 
 export const GlobalStyle = createGlobalStyle`
@@ -103,10 +102,8 @@ body {
   }
 
    @media screen and (min-width: 1440px){
-  background-image: url("${BgImgDesk}");
-  }
-    @media screen and (min-width: 1920px){
   background-image: url("${BgImgFull}");
   }
+
 }
 `;
