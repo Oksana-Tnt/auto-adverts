@@ -105,10 +105,11 @@ const AdvertList = () => {
             </Card>
           ))}
         </CatalogWrapper>
-
-        <ButtonWrapper>
-          <CardButton onClick={loadMoreAdverts}>Load more</CardButton>
-        </ButtonWrapper>
+        {size.length === 12 && (
+          <ButtonWrapper>
+            <CardButton onClick={loadMoreAdverts}>Load more</CardButton>
+          </ButtonWrapper>
+        )}
       </>
     );
   } else if (status === STATUS.REJECTED) return <ErrorCard />;
