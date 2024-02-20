@@ -26,6 +26,11 @@ export const HeaderWrapper = styled.div`
   padding: 20px;
   justify-content: space-between;
   align-items: center;
+  background-color: #7e8a98;
+  -webkit-box-shadow: -5px 7px 22px 5px rgba(126, 138, 152, 1);
+  -moz-box-shadow: -5px 7px 22px 5px rgba(126, 138, 152, 1);
+  box-shadow: -5px 7px 22px 5px rgba(126, 138, 152, 1);
+  border: none;
 
   @media screen and (min-width: 768px) {
     align-items: flex-start;

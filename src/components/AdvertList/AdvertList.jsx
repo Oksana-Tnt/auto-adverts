@@ -57,6 +57,7 @@ const AdvertList = () => {
   }, [adverts]);
 
   const renderAvderts = filters.lenght === 0 ? newAdverts : adverts;
+  const size = Object.keys(renderAvderts);
 
   //-----------------Favorite--------------------------------------------
   const storedFavorite = localStorage.getItem("favorite");
@@ -86,6 +87,8 @@ const AdvertList = () => {
       prevFavorite.filter((item) => item.id !== id)
     );
   };
+
+  console.log(size.length);
   //---------------------------------------------------------------------------------------
   if (status === STATUS.PENDING) return <Loader />;
   else if (status === STATUS.FULFILLED) {
@@ -103,6 +106,7 @@ const AdvertList = () => {
             </Card>
           ))}
         </CatalogWrapper>
+
         <ButtonWrapper>
           <CardButton onClick={loadMoreAdverts}>Load more</CardButton>
         </ButtonWrapper>

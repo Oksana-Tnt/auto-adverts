@@ -48,20 +48,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
     overflow: hidden;
-
- 
+    
 }
 
 
 .catalog-section{
-  padding-top: 100px;
+  padding-top: 150px;
   height: 100vh;
   overflow-y: scroll;
 
-  @media screen and (min-width: 768px){
-    margin-top: -80px;    
   }
- }
 
 .favorite-section{
   padding-top: 80px;
@@ -87,7 +83,7 @@ body {
 }
 
 .catalog-container{
-  height: 100vh;
+  height: calc (-50px + 100vh);
   overflow-y: scroll;
 }
 

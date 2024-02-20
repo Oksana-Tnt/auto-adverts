@@ -15,7 +15,6 @@ export const advertsSlice = createSlice({
     setFilters: (state, action) => {
       state.filters = action.payload;
       state.adverts = [];
-      console.log(state.filters);
     },
   },
   extraReducers: (builder) => {
