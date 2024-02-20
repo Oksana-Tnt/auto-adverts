@@ -88,7 +88,6 @@ const AdvertList = () => {
     );
   };
 
-  console.log(size.length);
   //---------------------------------------------------------------------------------------
   if (status === STATUS.PENDING) return <Loader />;
   else if (status === STATUS.FULFILLED) {
